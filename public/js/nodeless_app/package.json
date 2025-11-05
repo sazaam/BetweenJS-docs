@@ -1,0 +1,11 @@
+{
+	"name": "Between_nodeless",
+	"version": "0.0.1",
+	"description": "Strawnode's example nodeless app",
+	"dependencies": [
+		"trace.js",
+		"type.js",
+		"strawexpress.js",
+		"strawjade.js"
+	]
+}

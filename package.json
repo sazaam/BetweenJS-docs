@@ -1,0 +1,28 @@
+{
+  "name": "mvsite",
+  "version": "0.0.1",
+  "description": "The Metavagrant Website Frontend Project",
+  "main": "app.js",
+  "keywords": [],
+  "author": "metavagrant",
+  "email": "metavagrant@gmail.com",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "cross-env NODE_ENV=staging nodemon ./bin/www --ignore public/*",
+    "css": "npx @tailwindcss/cli -i ./public/css/all.css -o ./public/css/allbis.css --watch",
+    "build": "cross-env NODE_ENV=production node ./bin/www"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "cookie-parser": "~1.4.4",
+    "cross-env": "^7.0.3",
+    "debug": "~2.6.9",
+    "express": "^4.21.2",
+    "http-errors": "~1.6.3",
+    "jade": "^0.29.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^4.1.16"
+  }
+}

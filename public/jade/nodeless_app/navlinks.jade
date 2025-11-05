@@ -1,0 +1,1 @@
+ul#sections.fix.sections.typo3.txtL.context.pad.left0.sizeXSm	- sections = response.ancestor.alphachildren ;	- for(var s in sections) {		- var res = sections[s] ;		li.floatL.Rmargin#{response.id != res.id ? ".inactive" : ""}			a.item.rel.sizeR.bold.uppercase(href="#/en#{res.path + '/'}")= res.id	- }

@@ -1,0 +1,106 @@
+ 
+ /*
+ possible size queries :
+ high standard 								1920 x 1200 		140%
+ high standard 								1600 x 1200 		123%
+ high standard 								1400 x 1050 		110%
+ high-med standard 							1280 x 1024			100%
+ base standard >> 							1024 x 800			95%
+ smaller screens and VGA smartphones >> 	640 x 480			80%
+ custom client >> 							430 x 480			70%
+ smartPhone low >> 							320 x 240			60%
+ iphone >> 									320 x 480			60%
+ 
+ */
+
+
+
+/* > 0  */ 
+ @media screen and (min-width: 0px) {
+	.XXLg{font-size:70%}
+}
+
+/* > 1024  */ 
+ @media screen and (min-width: 450px) {
+  .XXLg{font-size:80% !important}
+  
+}
+
+/* > 1024  */ 
+ @media screen and (min-width: 640px) {
+  .XXLg{font-size:90% !important}
+  
+  .Med{font-size:90% !important}
+}
+/* > 1024  */ 
+ @media screen and (min-width: 1024px) {
+  .XXLg{font-size:100% !important}
+  
+}
+
+/* > 1280  */ 
+ @media screen and (min-width: 1280px) {
+  .XXLg{font-size:150% !important}
+  
+}
+/* > 1400  */ 
+ @media screen and (min-width: 1400px) {
+  .XXLg{font-size:200% !important}
+  
+}
+/* > 1600  */ 
+ @media screen and (min-width: 1600px) {
+  .XXLg{font-size:250% !important}
+  
+}
+
+/* > 1600  */ 
+ @media screen and (min-width: 2000px) {
+  .XXLg{font-size:300% !important}
+  
+}
+
+
+/* !!! DO NOT REMOVE THIS BLOCK !!! */
+/* !!! WEBKIT HACK FOR PRIVATE ACCESS BLOCKS !!! */
+/* !!! MESSING WITH THE MAKE COMPRESS THAT'S WHY IT IS THERE !!! */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+   
+}
+
+
+
+/* IPhone */
+@media screen and (max-device-width: 480px)
+{
+	/*body{font-size:150% !important}*/
+	
+}
+@media only screen  and (orientation:landscape){
+	
+}
+/*iPad landscape orientation styles */
+
+/* IPad Portrait MANAGED TO AVOID USING IT*/
+@media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)
+{
+	
+	
+}
+@media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)
+{
+
+
+}
+/* OTHER */
+/* BUT NOT NECESSARY FOR THIS PROJECT */
+@media screen and (min-device-width: 1025px)
+{
+
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+}
+
+

@@ -1,0 +1,37 @@
+.rel.rest(style="height:10000px")
+	- var res = response ;
+	- var children = res.children ;
+	- for(var i = 0 ; i < children.length ; i++) {
+		- var child = children[i] ;
+		- var name = child.label ;
+		
+		##{name}.element.VpadXXXLg.context.rel
+			.animback.abs.top0.bottom0.left0.right0.zi1.flowhidden(style="opacity:0")
+				.abs.framedExtended.noselect
+					- for(var n = 0 ; n < 29 ; n ++){
+						.shapes.sizeCrazy.abs(style="left:-50px;") a
+					- }
+			.simple.rel.zi2
+				.rel.HmarXXXXLg
+					.elementitle.typo.context.pentoneborder.rel.top1
+						h3.sizeR.floatL.padXSm.blacktransp.pentoneborder.Tbd1.Lbd1
+							a.bold.pentoneB.lhR(href="#/" + lang + res.path + "/" + name + "/")= "." + name
+						h4.sizeR.floatL.padXSm.blacktransp.pentoneborder.Tbd1.Rbd1
+							span.antrax.lhR.sizeSm= child.userData.params
+
+					.elementcontent.blacktransp.pentoneborder.Vbd1.Hbd1
+						.description.txtL.sizeLg.VpadSm
+							p.HpadSm= child.userData.desc
+						
+						
+						.infos.sizeSm
+							
+							hr.Hmar.anthraciteBG
+							
+							.example.rel.padLg
+								
+								a.runexample.sizeSm.block.abs.bottom0.right0.BmarXXLg.RmarXXLg.pad.RpadLg.pentoneblock(href="#")
+									strong.block.bold &gt; Run
+								code.shady.typo3.block(style="white-space:pre-wrap")
+									include ./jade/nodeless_app/codes/create.jade
+	- }

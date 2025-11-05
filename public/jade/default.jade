@@ -1,0 +1,341 @@
+extends ./layout
+block content
+
+	script( type="text/javascript", src="/js/nodeless_app/strawnode_modules/trace.js" )
+	script( type="text/javascript", src="/js/nodeless_app/strawnode_modules/type.js" )
+	script( type="text/javascript", src="/js/nodeless_app/strawnode_modules/betweenjs.js" )
+	script( type="text/javascript", src="/js/nodeless_app/strawnode_modules/strawnode_modules/jquery-1.8.1.min.js" )
+
+
+	#main.grid.fullH.place-content-center.darkBG
+		.saz.rel
+			#testbox.rel.bg-red-700.w-32.h-32.grid.place-content-center
+				span#logo.noselect.bolder.black.rel BetweenJS
+		
+
+		script.
+			trace('start...') ;
+
+
+			
+
+			
+			var RGB = BJS.$.ColorMode.RGB ;
+			var HSV = BJS.$.ColorMode.HSV ;
+			var HSL = BJS.$.ColorMode.HSL ;
+			
+			
+			
+			//////////////////////////////////////////////////////// NEEDS TO GO IN BETWEEN
+			
+
+			//- trace(BJS.$.ColorMode.RGB(255, 0, 0))
+			
+			//- throw '' ;
+			
+			
+			//////////////////////////////////////////////////////// NEEDS TO GO IN BETWEEN
+			
+			// when doing a new Color, should accept anything
+			var mycol = new HSL('orangered') ;
+			
+			//////////////////////////// BJS EVENTS
+			;(function(){
+				var halted = false;
+
+				var pauseBetween = function() {
+					var AT = BetweenJS.$.AnimationTicker;
+					if (!!AT.started) {
+						if (!!AT.HALT) {
+							halted = false;
+							AT.restoreSystem();
+						} else {
+							AT.haltSystem();
+							halted = true;
+						}
+					}
+				}
+
+				// SPACEBAR
+
+				$(document).on('keydown', function(e) {
+					if (e.keyCode == 32) {
+						trace('YOOOOOO')
+						pauseBetween();
+					}
+				})
+
+
+
+				$(window).on('blur', function(e) {
+					var AT = BetweenJS.$.AnimationTicker;
+					if (!!AT.started && !halted) AT.haltSystem();
+					// trace('blurred')
+
+					// if (window.CURRENTSLIDE) {
+					//     window.CURRENTSLIDE.halt();
+					// }
+
+
+				})
+
+				$(window).on('focus', function(e) {
+					var AT = BetweenJS.$.AnimationTicker;
+					if (!!AT.started && !halted) AT.restoreSystem();
+					// trace('focused')
+
+					// if (window.CURRENTSLIDE) {
+					//     window.CURRENTSLIDE.launch();
+					// }
+
+				}) 	
+				
+			})() ;
+			//////////////////////////// END BJS EVENTS
+
+
+			//////////////////////////// BJS BOX TEST
+			(function(){
+				var box = $("#testbox") ;
+				var back = $("#main") ;
+				var logo = $("#logo") ;
+				
+				
+				var start                   = HSV.fromAlias('darkolivegreen')
+				var end                     = HSV.fromAlias('lightsalmon')
+				
+				var startback               = RGB.fromAlias('darkolivegreen', .25)
+				var endback                 = RGB.fromAlias('lightsalmon', .25)
+				
+				var splitTextToElements = function(target, eltag, clname){
+					var tg = $(target) ;
+					var txt = tg.text() ;
+					tg.text('') ;
+					for(s in txt){
+						var e = $(eltag) ;
+						e.addClass(clname).text(txt[s]) ;
+						tg.append(e) ;
+					}
+					return tg.children() ;
+				} ;
+				
+				
+				var letters = splitTextToElements('#logo', '<b>', 'letter rel') ;
+				//- trace(letters) ;
+
+				
+				var tws = [
+					BJS.create({
+						target:box,
+						from:{
+							//- 'left::PX':-50,
+							//- 'background-color':HSV.fromAlias('darkolivegreen')
+						},
+						//- cuepoints:{
+						//- 	'background-color':[HSV.fromAlias('aliceblue'),HSV.fromAlias('orangered')]
+						//- },
+						to:{
+							//- 'left::PX':50,
+							//- 'background-color':HSV.fromAlias('lightsalmon')
+						},
+						time:2.5,
+						ease:Linear.easeOut
+					}),
+					BJS.create({
+						target:back,
+						from:{
+							'background-color':startback
+						},
+						to:{
+							'background-color':endback
+						},
+						time:2.5,
+						ease:Linear.easeOut
+					}),
+					BJS.create({
+						target:logo,
+						from:{
+							'color':startback
+						},
+						to:{
+							'color':endback
+						},
+						time:2.5,
+						ease:Linear.easeOut
+					})
+				] ;
+				
+				
+				letters_tw = [] ;
+				var letters = $('.letter') ;
+				letters.each(function(i, el){
+					var let_tw = BJS.delay(BJS.repeat(BJS.create({
+						target:el,
+						from:{
+							'top::PX':0,
+							'opacity':100
+						},
+						cuepoints:{
+							'opacity':[0, 0, 0, 0, 0],
+							'top::PX':[25, -25]
+						},
+						to:{
+							'top::PX':0,
+							'opacity':100
+						},
+						time:.15,
+						ease:Circ.easeInOut
+					}), 2), .05*((letters.size()- i)+1)) ;
+					letters_tw.push(let_tw) ;
+				})
+				var lll = BJS.parallelTweens(letters_tw) ;
+				var rep = BJS.repeat(lll, 3) ;
+				
+				tws.push(rep) ;
+				
+				tw = BJS.parallelTweens(tws) ;
+				
+				tw.stopOnComplete = 0 ;
+
+
+				tw.onComplete = () => {
+					trace('Complete')
+					trace('isPlaying :', tw.isPlaying)
+				} ;
+
+				box.on('click', function(e){
+					if(!!tw.isPlaying) {
+						//- trace('stopped')
+						//- tw.stop() ;
+						tw.gotoAndStop(2.5);
+					}else
+					tw.gotoAndPlay(0) ;
+
+					//- tw.start() ;
+				})
+			})() ;
+			//////////////////////////// END BJS BOX TEST
+			
+			
+			var val , res ;
+			var l = 100 ;
+			
+
+			// created Color Objects
+			trace('\n\nFrom String')
+			trace('\t HSV from rgb string', HSV.fromStr("rgba(255, 0 , 0, .25)")) // ~20 ms
+			trace('\t HSV from hsv string', HSV.fromStr("hsv(360, 100 , 100)")) // ~20 ms
+			trace('\t HSV from hsl string', HSV.fromStr("hsla(360, 100, 50, .25)")) // ~20 ms
+			trace('\n\n') ;
+			trace('\t RGB from rgb string', RGB.fromStr("rgba(255, 0 , 0, .25)")) // ~20 ms
+			trace('\t RGB from hsv string', RGB.fromStr("hsv(360, 100 , 100)")) // ~20 ms
+			trace('\t RGB from hsl string', RGB.fromStr("hsla(360, 100, 50, .25)")) // ~20 ms
+			trace('\n\n') ;
+			trace('\t HSL from rgb string', HSL.fromStr("rgba(255, 0, 0, 0.25)")) // ~20 ms
+			trace('\t HSL from hsv string', HSL.fromStr("hsv(360, 100 , 100)")) // ~20 ms
+			trace('\t HSL from hsl string', HSL.fromStr("hsla(360, 100, 50, .25)")) // ~20 ms
+			
+			console.log('\n\n\nFrom Int')
+			trace('\t RGB from int', RGB.fromInt(0xFF00FF)) // ~20 ms
+			trace('\t RGB from int', RGB.fromInt(0xFF00FF40)) // ~20 ms
+			trace('\t HSV from int', HSV.fromInt(0xFF00FF40)) // ~20 ms
+			trace('\t HSL from int', HSL.fromInt(0xFF00FF40)) // ~20 ms
+			
+			console.log('\n\n\nFrom Hex')
+			trace('\t RGB from hex', RGB.fromHex("#FF00FF")) // ~20 ms
+			trace('\t RGB from hex', RGB.fromHex("#FF00FF40")) // ~20 ms
+			trace('\t HSV from hex', HSV.fromHex("#FF00FF40")) // ~20 ms
+			trace('\t HSL from hex', HSL.fromHex("#FF00FF40")) // ~20 ms
+			
+			console.log('\n\n\nFrom Obj')
+			trace('\t RGB from obj', RGB.fromObj({r:255, g:0, b:255})) // ~20 ms
+			trace('\t RGB from obj', RGB.fromObj({r:255, g:0, b:255, a:.25})) // ~20 ms
+			trace('\t HSV from obj', HSV.fromObj({r:255, g:0, b:255, a:.25})) // ~20 ms
+			trace('\t HSL from obj', HSL.fromObj({r:255, g:0, b:255, a:.25})) // ~20 ms
+
+			
+			console.log('\n\n\nFrom Alias')
+			console.log('\nAquamarine')
+			trace('\t RGB from alias', RGB.fromAlias("aquamarine")) // ~20 ms
+			trace('\t HSV from alias', HSV.fromAlias("aquamarine")) // ~20 ms
+			trace('\t HSL from alias', HSL.fromAlias("aquamarine")) // ~20 ms
+			
+			console.log('\nDarkolivegreen')
+			trace('\t RGB from alias', RGB.fromAlias("darkolivegreen")) // ~20 ms
+			trace('\t HSV from alias', HSV.fromAlias("darkolivegreen")) // ~20 ms
+			trace('\t HSL from alias', HSL.fromAlias("darkolivegreen")) // ~20 ms
+			
+
+
+
+
+			console.log('\n\n\nConversions')
+			
+			
+			var  testobjRGB = {r: 255, g: 0, b: 255, a: 0.25}
+			
+			var RGBtoHSV = BJS.$.Color.RGBtoHSV ;
+			var RGBtoHSL = BJS.$.Color.RGBtoHSL ;
+			var HSVtoRGB = BJS.$.Color.HSVtoRGB ;
+			var HSVtoHSL = BJS.$.Color.HSVtoHSL ;
+			var HSLtoRGB = BJS.$.Color.HSLtoRGB ;
+			var HSLtoHSV = BJS.$.Color.HSLtoHSV ;
+
+			trace('RGB -> HSV', RGBtoHSV(testobjRGB))
+			trace('HSV -> RGB', HSVtoRGB(RGBtoHSV(testobjRGB)))
+			trace('HSV -> HSL', HSVtoHSL({h:0, s:100, v:100}))
+			trace('HSL -> HSV', HSLtoHSV({h:0, s:100, l:50}))
+			
+			var box = $('#testbox') ;
+			
+			
+			//- trace('HSV -> RGB', BJS.$.Color.HSVtoRGB(BJS.$.Color.HSLtoHSV(BJS.$.Color.RGBtoHSL(testobjRGB))))
+			
+			//- trace(HSV.fromObj({r:255, g:0, b:255, a:.25})) // ~16 ms
+
+			//- trace(HSV.fromHex("#FF00FF")) // ~34 ms
+			//- trace(HSV.fromHex("#FF00FF40")) // ~35 ms
+			
+			
+			//- trace(HSV.fromInt(0xFF00FF)) ; // ~22 ms
+			//- trace(HSV.fromInt(0xFF00FF40)) ; // 26 ms
+			//- trace('hetergerg')
+			//- trace('-------') ;
+			
+			console.log('\n\n\nFormatting')
+
+			// writes formattede hsl CSS string 
+			val = HSV.format(HSV.fromStr("rgba(255, 0, 0)")) ;
+			trace(val) ;
+
+
+			
+
+
+
+			//- box.css({'background-color': val}) ;
+
+
+			//- trace(HSV.toHSL({h:50, s:30, v:60, a:.25})) ;    
+
+
+			//- box.css({'background-color': trace(HSV.format({h:100, s:30, v:60, a:.25}))})
+			//- box.css({'background-color': trace(HSV.format({h:100, s:30, v:60}))})
+			box.css({'background-color': RGB.format(RGB.fromAlias("lightseagreen"))})
+			
+			//- trace(HSV.fromHSL({h:50, s:18.37, l:51, a:.25}))
+			
+			//- box.css({'background-color': RGB.format({r:0, g:0, b:255, a:.25})})
+			
+			// HSL EXPECTED CSS FORMAT
+			//- box.css({'background-color': "hsl(50 30 60 / .25"}) ;
+
+			//- box.css({'background-color': "rgb(50, 30, 60 , .25)"})
+			var now = Date.now() ;
+
+
+			trace(Date.now() - now) ;
+
+
+
+

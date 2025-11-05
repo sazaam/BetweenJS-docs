@@ -1,0 +1,15 @@
+﻿.intro.page.sizeLg.fullH
+	.ui.abs.fullW.fullH
+		.grid.fullH.place-content-center.darkBG
+			#testbox.rel.grid
+				p.plainTxt.ls1.lh2.txtC
+					| <a class="rounded bg-red-700 hover:bg-red-500 inline-block padding white typo2 bolder" href="#">BetweenJS</a>
+					
+	//.pageinside.rel.marAuto.noselect
+		- for(var i = 0 ; i < 15 ; i++){
+			- var even = i % 2 == 0 ;
+			.element.sizeR.typo.ls2.txtL.context#{(i == 0) ? "" : ".none"}#element_#{i}
+				h3.sizeXXLg#{even ? ".txtR" : ".txtL"} #{even ? "AAAHIAIA.." : "Expect Low..."}
+				h3.sizeXXLg#{even ? ".txtL" : ".txtR"} #{even ? "... IHAHIHA" : "...Get High"}
+				sup.block.txtR.margin #{even ? "Tarzan" : "The BetweenJS bum"}
+		- }

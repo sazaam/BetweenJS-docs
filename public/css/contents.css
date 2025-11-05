@@ -1,0 +1,243 @@
+
+.pentoneA{
+	color:#ce0023;
+}
+.pentoneB{
+	color:#f9002a;
+}
+.pentoneC{
+	color:#ff627d;
+}
+
+html, body{
+	background:#0D0D0D;
+}
+
+
+.typo{
+	font-family:"BentonSans";
+}
+
+.shapes{font-family:"Shapes-Regular"}
+.sizeCrazy{font-size:300px !important}
+
+
+
+.animback{
+	
+}
+
+.framedExtended{
+	top:-222px;
+	bottom:0px;
+	left:-250px;
+	right:-250px;
+}
+
+
+.typo.bold, .typo .bold, .typo strong, .typo b{
+	position:relative;
+	margin-top:-2px;
+}
+
+.variantChange{
+	top:-3em	
+}
+
+#viewport{
+	top:-5em;
+	bottom:-5em;
+}
+
+.typo2{
+	font-family:"BentonSans";
+}
+
+.typo3{
+	font-family:"ARSMaquette";
+}
+
+.blacktransp{
+	background-color: rgba(23, 23, 23, 0.5);
+}
+
+body{
+	position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.header{
+	
+}
+
+.header .logo{
+	height:100%;
+	width:176px;
+}
+
+.header .version{
+	
+}
+.header .versionNo{}
+
+.github{
+	height:80px;
+	width:80px;
+}
+
+.githubflag{
+	height:100%;
+	background:url(./skin/github.png) no-repeat top left;
+}
+
+.frameline{
+	background:#ce0023;
+	height:5px;
+}
+
+.frameline.top{
+	top:0;
+}
+
+.frameline.bottom{
+	bottom:0;
+}
+
+.topframeline{
+	top:5px;
+}
+
+.bottomframeline{
+	bottom:5px;
+}
+
+.IMAGE{
+	background-size: cover;
+	background-position:100% 50%;
+}
+
+
+
+
+.cinema .cinema_intro{
+	/* background-image:url(./skin/00.png); */
+	background-repeat:no-repeat;
+}
+
+
+
+.cinema .cinema_api{
+	background:#1A1A1A;
+}
+
+.cinema .cinema_about{
+	
+}
+
+
+.bottomcontents{
+	height:0;
+	z-index:400;
+}
+
+
+.bottomcontents .desc{
+	position: relative;
+}
+
+.bottomcontents .maindesc{
+	float:left;
+}
+
+.bottomcontents .maindescinside .txtcont{
+	top:-6em;
+}
+
+.bottomcontents .leftovers{
+	left: 1px;
+	top:-3em;
+}
+
+.bottomcontents .punchline{
+	
+}
+
+.all .topframeline{top:0}
+.all .bottomframeline{bottom:0}
+
+/* TWEENABLES */
+
+
+.header{
+	height:5em
+}
+
+.topMarged{top:5em}
+.bottomMarged{bottom:3em}
+
+
+
+/* SETTING RESPONSIVE TO DEFAULT 10PX */
+
+body{
+	font-size:10px;
+}
+
+
+
+/* COLORS */
+.pentoneblock{background:#ce0023}
+.pentoneborder{border:0px solid #ce0023}
+
+
+
+.page{
+	width:100%;
+	position:relative;
+	
+}
+
+.page .pageinside{
+	
+}
+.page .marAuto{
+	width:350px;
+}
+
+.simple{
+	width:798px;
+}
+.noselect{user-select: none;}
+
+.page .rest{
+	/*background:#121212;*/
+}
+
+.page .rest .blacktransp{
+	background:#1A1A1A;
+}
+
+.darkshadeBG{
+	background:#0D0D0D;
+}
+
+.framecontent .page .pageinside{
+	left:-195px;
+}
+
+#api{}
+.api .element .infos{display:none}
+.api .element.opened .infos{display:block}
+
+
+
+.sections{
+	top:5.5em;
+	left:1.5em;
+	z-index:300;
+}
+

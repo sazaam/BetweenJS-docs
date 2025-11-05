@@ -1,0 +1,123 @@
+{
+	"create":{
+		"desc":"Creates a tween Instance",
+		"params":"(options)"
+	},
+	"tween":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, to, from, time, ease)"
+	},
+	"to":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, to, time, ease)"
+	},
+	"from":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, from, time, ease)"
+	},
+	"apply":{
+		"desc":"Creates a tween Instance",
+		"params":"(options, applyInBetweenContext)"
+	},
+	"instant":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, properties)"
+	},
+	"bezier":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, to, from, cuepoints, time, ease)"
+	},
+	"bezierTo":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, to, cuepoints, time, ease)"
+	},
+	"bezierFrom":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, from, cuepoints, time, ease)"
+	},
+	"physical":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, to, from, ease)"
+	},
+	"physicalTo":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, to, ease)"
+	},
+	"physicalFrom":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, from, ease)"
+	},
+	"physicalApply":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, to, from, ease, applyTime)"
+	},
+	"parallel":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween, ...)"
+	},
+	"parallelTweens":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween Array)"
+	},
+	"serial":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween, ...)"
+	},
+	"serialTweens":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween Array)"
+	},
+	"scale":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween, scale)"
+	},
+	"slice":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween, begin, end, isPercent)"
+	},
+	"reverse":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween)"
+	},
+	"repeat":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween, repeatCount)"
+	},
+	"delay":{
+		"desc":"Creates a tween Instance",
+		"params":"(tween, delay, postDelay)"
+	},
+	"addChild":{
+		"desc":"Creates a tween Instance",
+		"params":"(target, parent)"
+	},
+	"removeFromParent":{
+		"desc":"Creates a tween Instance",
+		"params":"(target)"
+	},
+	"func":{
+		"desc":"Creates a tween Instance",
+		"params":"(closure, params, useRollback, rollbackClosure, rollbackParams)"
+	},
+	"timeout":{
+		"desc":"Creates a tween Instance",
+		"params":"(duration, closure, params, useRollback, rollbackClosure, rollbackParams, force)"
+	},
+	"clearTimeout":{
+		"desc":"Creates a tween Instance",
+		"params":"(uid)"
+	},
+	"animationFrame":{
+		"desc":"Creates a tween Instance",
+		"params":"(closure, params, useRollback, rollbackClosure, rollbackParams, force)"
+	},
+	"cancelAnimationFrame":{
+		"desc":"Creates a tween Instance",
+		"params":"(uid)"
+	}
+	
+	
+	
+	
+	
+}

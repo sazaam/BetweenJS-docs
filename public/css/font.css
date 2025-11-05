@@ -1,0 +1,129 @@
+
+@font-face {
+    font-family: "Shapes-Regular";
+    font-style: normal;
+    src: url("./fonts/Shapes-Regular.eot?iefix") format("eot"), url("./fonts/Shapes-Regular.woff") format("woff"), url("./fonts/Shapes-Regular.ttf") format("truetype");
+}
+/* Ars Maquette Pro */
+
+@font-face {
+    font-family: "ARSMaquette";
+    font-style: normal;
+    src: url("./fonts/arsmaquettewebproone-SH.eot?iefix") format("eot"), url("./fonts/arsmaquettewebproone-SH.woff") format("woff"), url("./fonts/arsmaquettewebproone-SH.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ARSMaquette";
+    font-style: italic;
+    src: url("./fonts/arsmaquettewebproone-italic-SH.eot?iefix") format("eot"), url("./fonts/arsmaquettewebproone-italic-SH.woff") format("woff"), url("./fonts/arsmaquettewebproone-italic-SH.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ARSMaquette";
+    font-style: normal;
+    font-weight: bold;
+    src: url("./fonts/arsmaquettewebproone-bold-SH.eot?iefix") format("eot"), url("./fonts/arsmaquettewebproone-bold-SH.woff") format("woff"), url("./fonts/arsmaquettewebproone-bold-SH.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ARSMaquette";
+    font-style: italic;
+    font-weight: bold;
+    src: url("./fonts/arsmaquettewebproone-bolditalic-SH.eot?iefix") format("eot"), url("./fonts/arsmaquettewebproone-bolditalic-SH.woff") format("woff"), url("./fonts/arsmaquettewebproone-bolditalic-SH.ttf") format("truetype");
+}
+/**/
+/* US 101 */
+
+@font-face {
+    font-family: "U.S. 101";
+    font-style: normal;
+    src: url("./fonts/us101-webfont.eot?iefix") format("eot"), url("./fonts/us101-webfont.woff") format("woff"), url("./fonts/us101-webfont.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'SaintsSquareRegular';
+    src: url('./fonts/saintssquare-webfont.eot');
+    src: url('./fonts/saintssquare-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/saintssquare-webfont.woff') format('woff'),
+         url('./fonts/saintssquare-webfont.ttf') format('truetype'),
+         url('./fonts/saintssquare-webfont.svg#SaintsSquareRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face{
+    font-family:'BentonSans';
+    src:url('./fonts/BentonSans_Bold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/BentonSans_Bold.woff') format('woff'),
+        url('./fonts/BentonSans_Bold.ttf') format('truetype'),
+        url('./fonts/BentonSans_Bold.svg#web') format('svg');
+    font-weight:bold;
+    font-style:normal;
+}
+
+@font-face{
+    font-family:'BentonSans';
+    src:url('./fonts/BentonSans_Thin.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/BentonSans_Thin.woff') format('woff'),
+        url('./fonts/BentonSans_Thin.ttf') format('truetype'),
+        url('./fonts/BentonSans_Thin.svg#web') format('svg');
+    font-weight:100;
+    font-style:normal
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src:url('./fonts/Oswald-Bold.eot');
+    src:url('./fonts/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Oswald-Bold.woff') format('woff'),
+        url('./fonts/Oswald-Bold.ttf') format('truetype'),
+        url('./fonts/Oswald-Bold.svg#Oswald-Bold') format('svg');
+    font-weight:700;
+    font-style:normal
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src:url('./fonts/Oswald-Regular.eot');
+    src:url('./fonts/Oswald-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Oswald-Regular.woff') format('woff'),
+        url('./fonts/Oswald-Regular.ttf') format('truetype'),
+        url('./fonts/Oswald-Regular.svg#Oswald-Regular') format('svg');
+    font-weight:400;
+    font-style:normal
+}
+@font-face {
+    font-family:'Oswald';
+    src:url('./fonts/Oswald-Light.eot');
+    src:url('./fonts/Oswald-Light.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Oswald-Light.woff') format('woff'),
+        url('./fonts/Oswald-Light.ttf') format('truetype'),
+        url('./fonts/Oswald-Light.svg#Oswald-Light') format('svg');
+    font-weight:100;
+    font-style:normal
+}
+
+@font-face {
+    font-family: 'DejaVu Sans';
+    src: url('./fonts/dejavu-sans-webfont.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/dejavu-sans-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/dejavu-sans-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/dejavu-sans-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('./fonts/dejavu-sans-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/dejavu-sans-webfont.svg#dejavu_sansregular') format('svg'); /* Legacy iOS */
+		font-weight:400;
+		font-style:normal;
+}
+
+@font-face {
+    font-family: 'DejaVu Sans';
+    src: url('./fonts/dejavu-sans-bold-webfont.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/dejavu-sans-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/dejavu-sans-bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/dejavu-sans-bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('./fonts/dejavu-sans-bold-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/dejavu-sans-bold-webfont.svg#dejavu_sansbold') format('svg'); /* Legacy iOS */
+	font-weight:bold;
+	font-style:normal;
+}
+
+
+
+
